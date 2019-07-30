@@ -69,7 +69,7 @@ If you find your "own private safe" useful and if you can afford it,
 you can make a donation, here :
 
 BTC
-1ASRoowye748LAjcD63s723tWZdGisG1ue
+1EYeawrGUy3Emp3xCBzAe3pfiaSR4c1Luj
 
 or/and :)
 
