@@ -67,7 +67,11 @@ while getopts "cd" opt ; do
 	if [ $? = 0 ] ; then
 		nex=${arc%.*}   # sans le .gpg
 		tar xzf $nex
-		mv TARDIRECTORY/* .	# TARDIRECTORY est dans le tar tvf ...
+		mv TARDIRECTORY/* . 2>/dev/null || {
+			echo "Not crypted with pgpack ..."
+			echo "decrypting anyway"
+			exit
+		}
 		rm -r $nex $arc TARDIRECTORY
 	else
 		exit 2
