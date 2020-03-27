@@ -3,7 +3,7 @@
 # files in dir, tar this dir, gpg the tarball
 
 [[ $UID != 0 ]] && echo "Run me as root" && exit 11
-[[ "$#" = 0 ]] && echo "Usage : $0 -c (enCrypt) | -d (Decrypt)  <file(s)>" && exit 1
+[[ "$#" = 0 || "$1" = "--help" ]] && echo "Usage : $0 -c (enCrypt) | -d (Decrypt)  <file(s)>" && exit 1
  
 [[ $LANG == "fr_FR.UTF-8" || \
 $LANG == "fr_BE.UTF-8" || \
@@ -26,8 +26,11 @@ case $LANGAGE in
 	;;
 esac
 [[ $# = 0 ]] && echo $USAGE
-while getopts "cd" opt ; do
+while getopts "cdh" opt ; do
 	case $opt in
+		case $opt in
+	h) echo $USAGE && exit
+	;;
 	c)
 	[[ $# < 2 ]] && echo $IND  && exit 2
 	mkdir TARDIRECTORY 2>/dev/null
