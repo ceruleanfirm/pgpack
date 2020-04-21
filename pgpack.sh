@@ -27,8 +27,7 @@ case $LANGAGE in
 esac
 [[ $# = 0 ]] && echo $USAGE
 while getopts "cdh" opt ; do
-	case $opt in
-		case $opt in
+    case $opt in
 	h) echo $USAGE && exit
 	;;
 	c)
@@ -85,7 +84,7 @@ while getopts "cdh" opt ; do
 	echo -e "\"$1\" : option not supported\n$USAGE"
 	exit 1
 	;;
-	esac
+    esac
 done
 exit 0
 
